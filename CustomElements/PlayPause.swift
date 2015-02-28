@@ -85,7 +85,7 @@ public enum MediaState {
                                                                     small_r, angle)})
             assert(pointList.count > 0)
             var triPath = UIBezierPath()
-            triPath.lineJoinStyle = kCGLineJoinMiter
+            triPath.lineJoinStyle = kCGLineJoinRound// kCGLineJoinMiter
             triPath.lineWidth = lineWidth
             triPath.moveToPoint(pointList.first!)
             for(var i = 1; i < pointList.count; i++) {

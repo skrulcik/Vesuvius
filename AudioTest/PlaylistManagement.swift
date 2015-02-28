@@ -54,7 +54,7 @@ class PlaylistManager {
             artist: "MGMT",
             title: "Electric Feel",
             album: "Oracular Spectacular")
-        return Playlist(songs: [B, A, C])
+        return Playlist(songs: [C, A, B])
     }
     
     //MARK: Song Navigation
