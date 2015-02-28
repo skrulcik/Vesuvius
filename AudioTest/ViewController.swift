@@ -9,12 +9,18 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
+import CustomElements
 
 // 227766
 
 class ViewController: UIViewController {
     var playlistManager:PlaylistManager
     var songStreamer:AVPlayer?
+    
+    @IBOutlet weak var playPauseHUD: PlayPause!
+    @IBOutlet weak var albumArt: UIImageView!
+    @IBOutlet weak var songTitle: UILabel!
+    @IBOutlet weak var artistName: UILabel!
     
     override init() {
         playlistManager = PlaylistManager()
@@ -55,26 +61,39 @@ class ViewController: UIViewController {
                 && songStreamer!.error == nil) {
                 //Player is already playing
                 songStreamer!.pause()
+                playPauseHUD.mode = .Pause
             } else {
                 songStreamer!.play()
+                playPauseHUD.mode = .Play
             }
         } else {
+            playPauseHUD.mode = .Play
             playNewSong(playlistManager.currentSong)
         }
     }
     func playNewSong(song:Song){
         let songURL = NSURL(string: song.URL )
         if let playerItem = AVPlayerItem(URL: songURL) {
-            if childViewControllers.count > 0 {
-                if let playerView = childViewControllers[0] as? SongViewController {
-                    playerView.infoFromSong(song)
-                }
-            }
+            self.infoFromSong(song)
             songStreamer = AVPlayer(playerItem: playerItem)
             songStreamer!.play()
         } else {
             NSLog("Error parsing song URL")
         }
+    }
+    
+    func infoFromSong(song:Song) {
+        songTitle.text = song.title
+        artistName.text = song.artist
+        if song.albumArtURL != nil {
+            if let imgURL = NSURL(string: song.albumArtURL!) {
+                println("Trying to dispatch on background thread")
+                if let imgData = NSData(contentsOfURL: imgURL) {
+                    self.albumArt.image = UIImage(data: imgData)
+                }
+            }
+        }
+        self.updateViewConstraints()
     }
 }
 
