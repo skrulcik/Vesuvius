@@ -16,6 +16,17 @@ public enum MediaState {
 
     @IBInspectable var triSize: CGFloat = 0.55
     @IBInspectable var lineWidth: CGFloat = 3.0
+    @IBInspectable var fillsTri: Bool = false
+    @IBInspectable var closesPath: Bool = true
+    @IBInspectable var paused: Bool = false {
+        didSet {
+            if paused {
+                mode = .Pause
+            } else {
+                mode = .Play
+            }
+        }
+    }
     
     public var mode:MediaState = .Play {
         didSet {
@@ -80,8 +91,13 @@ public enum MediaState {
             for(var i = 1; i < pointList.count; i++) {
                 triPath.addLineToPoint(pointList[i])
             }
-            triPath.closePath()
+            if closesPath {
+                triPath.closePath()
+            }
             triPath.stroke()
+            if fillsTri {
+                triPath.fill()
+            }
         }
     }
 

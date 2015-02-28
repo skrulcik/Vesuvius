@@ -14,6 +14,7 @@
 		D25A02D21A96D83000949CF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25A02D01A96D83000949CF3 /* LaunchScreen.xib */; };
 		D25A02DE1A96D83000949CF3 /* AudioTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A02DD1A96D83000949CF3 /* AudioTestTests.swift */; };
 		D25A02E81A97BF5500949CF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A02E71A97BF5500949CF3 /* Constants.swift */; };
+		D28DCECE1AA18FA7002286D1 /* ChevronButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DCECD1AA18FA7002286D1 /* ChevronButton.swift */; };
 		D2CC6C271AA113AD00867F50 /* PlaylistManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC6C261AA113AD00867F50 /* PlaylistManagement.swift */; };
 		D2CC6C461AA1406B00867F50 /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC6C451AA1406B00867F50 /* SongViewController.swift */; };
 		D2CC6C481AA155C700867F50 /* PlayPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC6C471AA155C700867F50 /* PlayPause.swift */; };
@@ -83,6 +84,7 @@
 		D25A02DC1A96D83000949CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D25A02DD1A96D83000949CF3 /* AudioTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestTests.swift; sourceTree = "<group>"; };
 		D25A02E71A97BF5500949CF3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D28DCECD1AA18FA7002286D1 /* ChevronButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChevronButton.swift; sourceTree = "<group>"; };
 		D2CC6C261AA113AD00867F50 /* PlaylistManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistManagement.swift; sourceTree = "<group>"; };
 		D2CC6C451AA1406B00867F50 /* SongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 		D2CC6C471AA155C700867F50 /* PlayPause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPause.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				D2EC2C8C1A9960400066F188 /* CustomElements.h */,
 				D2EC2C8A1A9960400066F188 /* Supporting Files */,
 				D2CC6C471AA155C700867F50 /* PlayPause.swift */,
+				D28DCECD1AA18FA7002286D1 /* ChevronButton.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				D2CC6C481AA155C700867F50 /* PlayPause.swift in Sources */,
 				D2EC2CAD1A9968F90066F188 /* UtilityFunctions.swift in Sources */,
 				D2EC2CAB1A99683B0066F188 /* Constants.swift in Sources */,
+				D28DCECE1AA18FA7002286D1 /* ChevronButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,12 +29,25 @@ class ViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         playlistManager = PlaylistManager()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        let recordEmpty = UIImage(named: "record_empty.png")
+        let recordFull = UIImage(named: "record.png")
+        if recordEmpty != nil && recordFull != nil {
+            tabBarItem = UITabBarItem(title: "Discover", image: recordEmpty!, selectedImage: recordFull!)
+        }
     }
     required init(coder aDecoder: NSCoder) {
         playlistManager = PlaylistManager()
         super.init(coder: aDecoder)
+        let recordEmpty = UIImage(named: "record_empty.png")
+        let recordFull = UIImage(named: "record.png")
+        if recordEmpty != nil && recordFull != nil {
+            tabBarItem = UITabBarItem(title: "Discover", image: recordEmpty!, selectedImage: recordFull!)
+        }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     override func viewDidAppear(animated: Bool) {
         togglePlay()
     }
