@@ -34,6 +34,20 @@
                ReferencedContainer = "container:AudioTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D2EC2C911A9960400066F188"
+               BuildableName = "CustomElementsTests.xctest"
+               BlueprintName = "CustomElementsTests"
+               ReferencedContainer = "container:AudioTest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "D25A02D61A96D83000949CF3"
                BuildableName = "AudioTestTests.xctest"
                BlueprintName = "AudioTestTests"
+               ReferencedContainer = "container:AudioTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D2EC2C911A9960400066F188"
+               BuildableName = "CustomElementsTests.xctest"
+               BlueprintName = "CustomElementsTests"
                ReferencedContainer = "container:AudioTest.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -13,44 +13,68 @@ import AudioToolbox
 // 227766
 
 class ViewController: UIViewController {
+    var playlistManager:PlaylistManager
+    var songStreamer:AVPlayer?
     
-    var audioPlayer = AVAudioPlayer()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // Color demo
-        let base = UIView(frame: CGRectMake(0, 0, 300, 500))
-        base.backgroundColor = Color.compoundBlue
-        let blue = UIView(frame: CGRectMake(25,25, 100, 150))
-        blue.backgroundColor = Color.primary
-        let brown = UIView(frame: CGRectMake(175, 250, 100, 150))
-        brown.backgroundColor = Color.compoundBrown
-        view.addSubview(base)
-        view.addSubview(blue)
-        view.addSubview(brown)
-        
+    override init() {
+        playlistManager = PlaylistManager()
+        super.init()
     }
-    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        playlistManager = PlaylistManager()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    required init(coder aDecoder: NSCoder) {
+        playlistManager = PlaylistManager()
+        super.init(coder: aDecoder)
+    }
+
     override func viewDidAppear(animated: Bool) {
-        var alertSound = NSURL(string: "http://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3")
-        println(alertSound)
-        
-        // Removed deprecated use of AVAudioSessionDelegate protocol
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
-        
-//        var error:NSError?
-//        audioPlayer = AVAudioPlayer(contentsOfURL: alertSound, error: &error)
-//        audioPlayer.prepareToPlay()
-//        audioPlayer.play()
+        togglePlay()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func toggleMusic(sender: AnyObject) {
+        togglePlay()
     }
-
-
+    
+    @IBAction func swipeRight(sender: AnyObject) {
+        NSLog("Swipe right on song %@", playlistManager.currentSong.title)
+        playlistManager.forward()
+        playNewSong(playlistManager.currentSong)
+    }
+    
+    @IBAction func swipeLeft(sender: AnyObject) {
+        NSLog("Swipe left on song %@", playlistManager.currentSong.title)
+        playlistManager.forward()
+        playNewSong(playlistManager.currentSong)
+    }
+    
+    func togglePlay() {
+        if (songStreamer != nil){
+            if (songStreamer!.rate > 0
+                && songStreamer!.error == nil) {
+                //Player is already playing
+                songStreamer!.pause()
+            } else {
+                songStreamer!.play()
+            }
+        } else {
+            playNewSong(playlistManager.currentSong)
+        }
+    }
+    func playNewSong(song:Song){
+        let songURL = NSURL(string: song.URL )
+        if let playerItem = AVPlayerItem(URL: songURL) {
+            if childViewControllers.count > 0 {
+                if let playerView = childViewControllers[0] as? SongViewController {
+                    playerView.infoFromSong(song)
+                }
+            }
+            songStreamer = AVPlayer(playerItem: playerItem)
+            songStreamer!.play()
+        } else {
+            NSLog("Error parsing song URL")
+        }
+    }
 }
 

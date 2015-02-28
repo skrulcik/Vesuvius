@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CustomElements.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>SongDropMedia.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,26 @@
 			<true/>
 		</dict>
 		<key>D25A02D61A96D83000949CF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2CC6C2D1AA121F000867F50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2CC6C371AA121F000867F50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2EC2C871A9960400066F188</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2EC2C911A9960400066F188</key>
 		<dict>
 			<key>primary</key>
 			<true/>

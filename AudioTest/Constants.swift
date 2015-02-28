@@ -26,9 +26,11 @@ extension UIColor
 }
 
 struct ColorProfile {
-    let primary = UIColor.hexColor("227766")
-    let compoundBlue = UIColor.hexColor("2277AA")
-    let compoundBrown = UIColor.hexColor("884444")
+    // Based off of Adobe Flat-UI-color-theme-2469224
+    let primary = UIColor.hexColor("3399DD")
+    let primaryDark = UIColor.hexColor("334455")
+    let secondary = UIColor.hexColor("EEEEEE")
+    let accent = UIColor.hexColor("EE5544")
 }
 
 let Color = ColorProfile()
