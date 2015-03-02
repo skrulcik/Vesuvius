@@ -54,7 +54,6 @@ public enum MediaState {
             
             // Fill outer circle
             let r:CGFloat = rect.width/6
-            println("Original r \(r) in rect \(rect.width)")
             let center = CGPoint(x: rect.midX, y: rect.midY)
             let outerCircle = UIBezierPath(arcCenter: center, radius: r,
                 startAngle: 0.0, endAngle: CGFloat(2*M_PI),

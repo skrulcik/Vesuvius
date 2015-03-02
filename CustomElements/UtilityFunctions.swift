@@ -32,7 +32,6 @@ func anglesForPoints(numberOfPoints:Int) -> Array<Double>{
 }
 
 func pointOnCircle(x:CGFloat, y:CGFloat, r:CGFloat, theta:Double) -> CGPoint {
-    println("Radius is \(r)")
     let px = x + r * CGFloat(cos(theta))
     let py = y + r * CGFloat(sin(theta))
     return CGPoint(x: px, y: py)

@@ -131,13 +131,13 @@
         <scene sceneID="JUk-eB-Fy0">
             <objects>
                 <navigationController id="xWg-6n-YrJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Q1U-8n-y1x">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q1U-8n-y1x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.18969189248441945" green="0.50864254593849179" blue="0.44529209967647082" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.18823529411764706" green="0.50980392156862742" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
-                            <color key="textColor" red="0.90588235294117647" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
@@ -198,5 +198,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="0.18823529411764706" green="0.50980392156862742" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.18823529410000001" green="0.50980392159999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

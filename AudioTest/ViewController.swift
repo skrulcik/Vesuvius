@@ -53,7 +53,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func toggleMusic(sender: AnyObject) {
-        togglePlay()
+        if let tapRecognizer = sender as? UITapGestureRecognizer {
+            let tap = tapRecognizer.locationInView(self.view)
+            if albumArt.frame.contains(tap) {
+                togglePlay()
+            }
+        }
     }
     
     @IBAction func swipeRight(sender: AnyObject) {
@@ -100,7 +105,6 @@ class ViewController: UIViewController {
         artistName.text = song.artist
         if song.albumArtURL != nil {
             if let imgURL = NSURL(string: song.albumArtURL!) {
-                println("Trying to dispatch on background thread")
                 if let imgData = NSData(contentsOfURL: imgURL) {
                     self.albumArt.image = UIImage(data: imgData)
                 }
