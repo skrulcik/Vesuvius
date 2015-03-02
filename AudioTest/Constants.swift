@@ -27,10 +27,12 @@ extension UIColor
 
 struct ColorProfile {
     // Based off of Adobe Flat-UI-color-theme-2469224
-    let primary = UIColor.hexColor("3399DD")
-    let primaryDark = UIColor.hexColor("334455")
-    let secondary = UIColor.hexColor("EEEEEE")
-    let accent = UIColor.hexColor("EE5544")
+    let primary = UIColor.hexColor("308272")
+    let primaryDark = UIColor.hexColor("0E352E")
+    let secondary = UIColor.hexColor("FFFFFF")
+    let accent = UIColor.hexColor("681115")
+    let accentDark = UIColor.hexColor("422622")
+    let neutral = UIColor.hexColor("67889B")
 }
 
 let Color = ColorProfile()

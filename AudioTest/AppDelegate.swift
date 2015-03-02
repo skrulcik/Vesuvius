@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Set tab bar tint color to green
-        UITabBar.appearance().tintColor = UIColor.hexColor("308272")
+        UITabBar.appearance().tintColor = Color.primary//UIColor.hexColor("308272")
+        UINavigationBar.appearance().tintColor = Color.primary
+        window?.tintColor = Color.primary
         return true
     }
 
