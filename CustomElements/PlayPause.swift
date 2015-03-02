@@ -43,28 +43,15 @@ public enum MediaState {
     }
 
     override public func drawRect(rect: CGRect) {
-        // First clear backgroung
-        self.backgroundColor = UIColor.clearColor()
-        super.drawRect(rect)
-        
-        // Determin if we shade background or not
-        var darkShadow:UIColor
-        if mode == .Play {
-            // Is playing, don't do anything
-            darkShadow = UIColor.clearColor()
-        } else {
-            // Is paused, show play symbol (like button)
-            darkShadow = UIColor.blackColor()
-            // Note: Alpha on color would not work
-            //          instead I set to opaque, then changed view alpha
-        }
-        alpha = 0.75
-        darkShadow.setFill()
-        let coverRect = UIBezierPath(rect: rect)
-        coverRect.fill() // Dark shade over album color
-        
         // Draw Play pause button
         if mode == .Pause {
+            var darkShadow = UIColor.blackColor()
+            // Put dark shade over album color
+            alpha = 0.75
+            darkShadow.setFill()
+            let coverRect = UIBezierPath(rect: rect)
+            coverRect.fill()
+            
             // Fill outer circle
             let r:CGFloat = rect.width/6
             println("Original r \(r) in rect \(rect.width)")
@@ -98,6 +85,8 @@ public enum MediaState {
             if fillsTri {
                 triPath.fill()
             }
+        } else {
+            self.backgroundColor = UIColor.clearColor()
         }
     }
 
