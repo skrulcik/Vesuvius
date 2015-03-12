@@ -60,6 +60,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdN-Qa-CMq" customClass="ChevronButton" customModule="CustomElements">
                                 <rect key="frame" x="2" y="345" width="30" height="71"/>
+                                <color key="tintColor" red="0.64893530845642089" green="0.079352724669973868" blue="0.13677145887034478" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -168,11 +169,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="1442"/>
         </scene>
-        <!--Song Drop-->
+        <!--Vesuvius-->
         <scene sceneID="ekw-4n-Kdv">
             <objects>
                 <tabBarController id="mRl-cy-KiT" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Song Drop" id="zwu-Jg-eSZ"/>
+                    <navigationItem key="navigationItem" title="Vesuvius" id="zwu-Jg-eSZ"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DDL-yw-1BD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
