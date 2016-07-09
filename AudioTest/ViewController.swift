@@ -21,11 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var albumArt: UIImageView!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
-    
-    override init() {
-        playlistManager = PlaylistManager()
-        super.init()
-    }
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         playlistManager = PlaylistManager()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,7 +31,7 @@ class ViewController: UIViewController {
             tabBarItem = UITabBarItem(title: "Discover", image: recordEmpty!, selectedImage: recordFull!)
         }
     }
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         playlistManager = PlaylistManager()
         super.init(coder: aDecoder)
         let recordEmpty = UIImage(named: "record_empty.png")
@@ -90,8 +86,8 @@ class ViewController: UIViewController {
         }
     }
     func playNewSong(song:Song){
-        let songURL = NSURL(string: song.URL )
-        if let playerItem = AVPlayerItem(URL: songURL) {
+        if let songURL = NSURL(string: song.URL) {
+            let playerItem = AVPlayerItem(URL: songURL)
             self.infoFromSong(song)
             songStreamer = AVPlayer(playerItem: playerItem)
             songStreamer!.play()

@@ -67,11 +67,11 @@ public enum MediaState {
             // Evenly distribute points to make triangle
             let angleList = anglesForPoints(3) // Three points of triangle
             let small_r = r * triSize // Radius of circle triangle gets inscribed in
-            let pointList = map(angleList, {angle in pointOnCircle(center.x, center.y,
-                                                                    small_r, angle)})
+            let pointList = angleList.map({angle in pointOnCircle(center.x, y: center.y,
+                                                                    r: small_r, theta: angle)})
             assert(pointList.count > 0)
             var triPath = UIBezierPath()
-            triPath.lineJoinStyle = kCGLineJoinRound// kCGLineJoinMiter
+            triPath.lineJoinStyle = CGLineJoin.Round// kCGLineJoinMiter
             triPath.lineWidth = lineWidth
             triPath.moveToPoint(pointList.first!)
             for(var i = 1; i < pointList.count; i++) {

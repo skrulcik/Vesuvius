@@ -46,8 +46,8 @@ public enum ChevronButtonDirection {
         // Set drawing color 
         tintColor?.setStroke()
         // Set drawing style
-        var chevronPath = UIBezierPath()
-        chevronPath.lineJoinStyle = kCGLineJoinMiter
+        let chevronPath = UIBezierPath()
+        chevronPath.lineJoinStyle = CGLineJoin.Miter
         chevronPath.lineWidth = lineWidth
         // Add points sequentially (do NOT close path)
         chevronPath.moveToPoint(CGPoint(x: topBotX, y: frm.minY))

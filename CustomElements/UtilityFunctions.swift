@@ -11,7 +11,7 @@ import UIKit
 
 
 func darkenColor(original:UIColor, byFactor coefficient:CGFloat = 0.9) -> UIColor{
-    var colorInfo = original.CGColor
+    let colorInfo = original.CGColor
     let colorComp = CGColorGetComponents(colorInfo)
     let red = colorComp[0] * coefficient
     let green = colorComp[1] * coefficient
